@@ -37,7 +37,7 @@ function handleData(data, currency, amount) {
     if (series && series.length > 0) {
         const lastValue = series[0].valor;
         const convertedAmount = (amount / lastValue).toFixed(2);
-        resultElement.innerHTML = `El monto convertido de ${amount} es: ${convertedAmount} ${currency}`;
+        resultElement.innerHTML = `El monto convertido de ${amount} es: ${convertedAmount} ${currency.toUpperCase()}`;
 
         const historicalData = getHistoricalData(series);
         updateChart(historicalData, currency);
