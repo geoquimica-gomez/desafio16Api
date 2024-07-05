@@ -8,7 +8,7 @@ let chart;
 
 btnApp.addEventListener("click", async () => {
     const selectedValue = selectElement.value;
-    const amount = inputApp.value;
+    const amount = Number(inputApp.value);
     const urlApi = `https://mindicador.cl/api/${selectedValue}`;
 
     const data = await fetchData(urlApi);
