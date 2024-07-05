@@ -20,7 +20,7 @@ btnApp.addEventListener("click", async () => {
     inputApp.value = "";
 });
 
-async function fetchData(url) {
+const fetchData = async (url) => {
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -30,9 +30,9 @@ async function fetchData(url) {
         console.error("Error al obtener los datos:", error);
         return null;
     }
-}
+};
 
-function handleData(data, currency, amount) {
+const handleData = (data, currency, amount) => {
     const series = data.serie;
     if (series && series.length > 0) {
         const lastValue = series[0].valor;
@@ -44,13 +44,11 @@ function handleData(data, currency, amount) {
     } else {
         resultElement.innerHTML = "No se encontraron datos para la moneda seleccionada.";
     }
-}
+};
 
-function getHistoricalData(series) {
-    return series.slice(0, 10).reverse();
-}
+const getHistoricalData = (series) => series.slice(0, 10).reverse();
 
-function updateChart(historicalData, currency) {
+const updateChart = (historicalData, currency) => {
     const labels = [];
     const values = [];
 
@@ -83,4 +81,4 @@ function updateChart(historicalData, currency) {
             }
         }
     });
-}
+};
