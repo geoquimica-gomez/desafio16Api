@@ -17,6 +17,7 @@
             <div class="app-converter">
                 <h2>Pesos CLP</h2>
                 <input
+                    id="inputApp"
                     type="number"
                     required
                     placeholder="Ingrese el monto en CLP">
@@ -27,8 +28,11 @@
                     <option value="euro">Euro</option>
                     <option value="bitcoin">Bitcoin</option>
                 </select>
-                <button>Buscar</button>
+                <button id="btnApp">Buscar</button>
                 <p id="result">...</p>
+            </div>
+            <div class="grafica">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
 
